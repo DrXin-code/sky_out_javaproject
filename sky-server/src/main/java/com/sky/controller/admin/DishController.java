@@ -2,8 +2,10 @@ package com.sky.controller.admin;
 
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
+import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
+import com.sky.service.CategoryService;
 import com.sky.service.DishService;
 import com.sky.vo.DishVO;
 import io.swagger.annotations.Api;
@@ -21,12 +23,15 @@ import java.util.List;
 public class DishController {
     @Autowired
     private DishService dishService;
+    @Autowired
+    private CategoryService categoryService;
     @PostMapping
     @ApiOperation("新增菜品")
     public Result save(@RequestBody DishDTO dishDTO) {
         dishService.saveWithFlavor(dishDTO);
         return Result.success();
     }
+
     @GetMapping("/page")
     @ApiOperation("菜品分页查询")
     public Result<PageResult> page( DishPageQueryDTO dishPageQueryDTO) {
@@ -54,5 +59,14 @@ public class DishController {
         dishService.updateWithFlavor(dishDTO);
         return Result.success();
     }
+
+    @GetMapping("/list")
+    @ApiOperation("根据分类id查询菜品")
+    public Result<List<Dish>> getByCategoryId(@RequestParam Long categoryId) {
+        List<Dish> list=dishService.getByCategoryId(categoryId);
+        return Result.success(list);
+
+    }
+
 
 }

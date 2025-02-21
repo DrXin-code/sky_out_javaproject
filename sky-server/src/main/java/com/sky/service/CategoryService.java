@@ -4,9 +4,13 @@ import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import com.sky.result.PageResult;
+import com.sky.vo.DishVO;
+
 import java.util.List;
 
 public interface CategoryService {
+
+
 
     /**
      * 新增分类
