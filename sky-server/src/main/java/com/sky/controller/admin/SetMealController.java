@@ -38,5 +38,6 @@ public class SetMealController {
     public Result deleteMeal(@RequestParam List<Long> ids) {
         setMealService.deleteMealBatch(ids);
         return Result.success();
+
     }
 }
