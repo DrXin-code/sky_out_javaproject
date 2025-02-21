@@ -39,5 +39,6 @@ public class SetMealController {
         setMealService.deleteMealBatch(ids);
         return Result.success();
 
+
     }
 }
