@@ -1,7 +1,8 @@
 **/target/
 .idea
 *.iml
-*.yml
+# 忽略密码文件
+sky-server/src/main/resources/application.yml
 *.class
 *Test.java
 **/test/
