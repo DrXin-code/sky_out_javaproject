@@ -3,6 +3,7 @@
 *.iml
 # 忽略密码文件
 sky-server/src/main/resources/application.yml
+sky-server/src/main/resources/application-dev.yml
 *.class
 *Test.java
 **/test/
