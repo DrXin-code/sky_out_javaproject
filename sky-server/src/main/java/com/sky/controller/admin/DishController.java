@@ -35,7 +35,7 @@ public class DishController {
     }
 
     @DeleteMapping
-    @ApiOperation("菜品批量")
+    @ApiOperation("菜品批量删除")
     public Result delete(@RequestParam List<Long> ids)
     {
         dishService.deleteBatch(ids);
