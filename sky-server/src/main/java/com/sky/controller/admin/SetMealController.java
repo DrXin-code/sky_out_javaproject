@@ -34,7 +34,7 @@ public class SetMealController {
     }
 
     @DeleteMapping
-    @ApiOperation("删除套餐接口")
+    @ApiOperation("删除套餐接口lala")
     public Result deleteMeal(@RequestParam List<Long> ids) {
         setMealService.deleteMealBatch(ids);
         return Result.success();
