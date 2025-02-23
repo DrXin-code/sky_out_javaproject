@@ -68,5 +68,12 @@ public class DishController {
 
     }
 
+    @PostMapping("/status/{status}")
+    @ApiOperation("菜品停售接口")
+    public Result updateStatus(@PathVariable Integer status,@RequestParam Long id) {
+        dishService.updateStatus(status,id);
+        return Result.success();
+    }
+
 
 }

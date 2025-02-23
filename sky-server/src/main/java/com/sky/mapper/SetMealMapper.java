@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.sky.annotation.AutoFill;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
+import com.sky.entity.SetmealDish;
 import com.sky.enumeration.OperationType;
 import com.sky.vo.SetmealVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -31,4 +32,17 @@ public interface SetMealMapper {
 
     @Select("select * from setmeal where id =#{id}")
     Setmeal getById(Long id);
+    /**
+     * 根据套餐id查询套餐和菜品的关联关系
+     * @param setmealId
+     * @return
+     */
+
+
+    @Select("select * from setmeal_dish where setmeal_id = #{setmealId}")
+    List<SetmealDish> getBySetmealId(Long setmealId);
+
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Setmeal setmeal);
+
 }
