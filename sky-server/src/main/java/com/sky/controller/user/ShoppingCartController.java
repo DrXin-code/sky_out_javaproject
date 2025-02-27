@@ -23,13 +23,13 @@ public class ShoppingCartController {
     @ApiOperation("添加")
     public Result add(@RequestBody ShoppingCartDTO shoppingCartDTO) {
         shoppingCartService.addShoppingCart(shoppingCartDTO);
-        return new Result().success();
+        return Result.success();
     }
 
     @GetMapping("/list")
     public Result<List<ShoppingCart>> list( ) {
         List<ShoppingCart> list=shoppingCartService.showShoppingCart();
-        return new Result().success(list);
+        return  Result.success(list);
 
     }
     @DeleteMapping("/clean")
