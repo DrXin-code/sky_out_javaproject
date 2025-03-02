@@ -66,5 +66,6 @@
         </where>
         order by order_time desc
     </select>
+    <select id="getByStatus" resultType="com.sky.entity.Orders"></select>
 
 </mapper>
